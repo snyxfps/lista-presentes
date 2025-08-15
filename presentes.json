@@ -1,0 +1,12 @@
+[
+  {
+    "categoria": "Cozinha",
+    "item": "Panela",
+    "comprado": false
+  },
+  {
+    "categoria": "Sala",
+    "item": "Almofada",
+    "comprado": false
+  }
+]
