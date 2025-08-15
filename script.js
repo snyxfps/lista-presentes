@@ -1,4 +1,4 @@
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbwB-0jclkODzYouKmcWvMqHxOT9uzBDtieGUAHtB7LVZDjRJILeagkfEbVI6rUXpAQc/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbwr7sgMiVnxczcuOFZeoxuSgg91HvtzEAhF7fcvWDeDmuNXEDpx7uGV-Cqmgw_ZYzPu/exec";
 
 async function carregarPresentes() {
     try {
