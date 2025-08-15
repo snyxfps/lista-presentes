@@ -1,9 +1,16 @@
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbwB-0jclkODzYouKmcWvMqHxOT9uzBDtieGUAHtB7LVZDjRJILeagkfEbVI6rUXpAQc/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbwr7sgMiVnxczcuOFZeoxuSgg91HvtzEAhF7fcvWDeDmuNXEDpx7uGV-Cqmgw_ZYzPu/exec";
 
 async function carregarPresentes() {
     try {
         const res = await fetch(SHEET_URL);
         const dados = await res.json();
+
+        // Verifica se houve erro no retorno
+        if (dados.erro) {
+            console.error("Erro do servidor:", dados.erro);
+            return;
+        }
+
         const container = document.getElementById("lista");
         container.innerHTML = "";
 
@@ -27,7 +34,10 @@ async function carregarPresentes() {
 async function reservarPresente(index) {
     try {
         const res = await fetch(SHEET_URL + "?reservar=" + index, { method: "POST" });
-        if (res.ok) {
+        const texto = await res.text();
+        console.log("Resposta do servidor:", texto);
+
+        if (res.ok && texto === "OK") {
             const confirmacao = document.getElementById("confirmacao");
             confirmacao.style.display = "block";
             setTimeout(() => {
@@ -35,7 +45,7 @@ async function reservarPresente(index) {
             }, 3000);
             carregarPresentes();
         } else {
-            console.error("Erro ao reservar presente:", res.statusText);
+            console.error("Erro ao reservar presente:", texto);
         }
     } catch (error) {
         console.error("Erro na requisição de reserva:", error);
