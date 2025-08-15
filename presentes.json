@@ -1,39 +1,17 @@
 [
-  { "item": "Conjunto de potes herméticos (tamanhos variados)", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Ralador inox", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Escorredor de louça", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Espremedor de alho", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Jogo de copos altos", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Descanso de panela", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Afiador de facas", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Pegador de salada", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Conjunto de travessas de vidro com tampa", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Bandeja para café da manhã na cama", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Moedor de café", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Jogo americano extra", "categoria": "Cozinha e Churrasco", "comprado": false },
-  { "item": "Jogo de pratos rasos", "categoria": "Mesa e Servir", "comprado": false },
-  { "item": "Taças de licor ou shots", "categoria": "Mesa e Servir", "comprado": false },
-  { "item": "Jogo de talheres extra", "categoria": "Mesa e Servir", "comprado": false },
-  { "item": "Conjunto de guardanapos de tecido", "categoria": "Mesa e Servir", "comprado": false },
-  { "item": "Almofadas decorativas", "categoria": "Sala e Lazer", "comprado": false },
-  { "item": "Manta para sofá", "categoria": "Sala e Lazer", "comprado": false },
-  { "item": "Jogo de porta-copos decorativo", "categoria": "Sala e Lazer", "comprado": false },
-  { "item": "Abajur ou luminária de canto", "categoria": "Sala e Lazer", "comprado": false },
-  { "item": "Quadro ou decoração de parede", "categoria": "Sala e Lazer", "comprado": false },
-  { "item": "Cobertor extra", "categoria": "Quarto", "comprado": false },
-  { "item": "Jogo de lençol extra (casal e solteiro)", "categoria": "Quarto", "comprado": false },
-  { "item": "Organizador de gavetas", "categoria": "Quarto", "comprado": false },
-  { "item": "Cabides de madeira", "categoria": "Quarto", "comprado": false },
-  { "item": "Espelho de corpo inteiro", "categoria": "Quarto", "comprado": false },
-  { "item": "Jogo de tapetes extra", "categoria": "Banheiro", "comprado": false },
-  { "item": "Kit de acessórios (porta-sabonete)", "categoria": "Banheiro", "comprado": false },
-  { "item": "Toalhas de piso", "categoria": "Banheiro", "comprado": false },
-  { "item": "Porta Escova", "categoria": "Banheiro", "comprado": false },
-  { "item": "Lixeira Pequena", "categoria": "Banheiro", "comprado": false },
-  { "item": "Cesto de roupa suja", "categoria": "Banheiro", "comprado": false },
-  { "item": "Aspirador de pó", "categoria": "Limpeza e Lavanderia", "comprado": false },
-  { "item": "Balde com esfregão (mop)", "categoria": "Limpeza e Lavanderia", "comprado": false },
-  { "item": "Varal suspenso", "categoria": "Limpeza e Lavanderia", "comprado": false },
-  { "item": "Ferro de passar", "categoria": "Limpeza e Lavanderia", "comprado": false },
-  { "item": "Cesto organizador multiuso", "categoria": "Limpeza e Lavanderia", "comprado": false }
+  {
+    "item": "Ralador inox",
+    "categoria": "Cozinha e Churrasco",
+    "comprado": false
+  },
+  {
+    "item": "Jogo de pratos rasos",
+    "categoria": "Mesa e Servir",
+    "comprado": false
+  },
+  {
+    "item": "Almofadas decorativas",
+    "categoria": "Sala e Lazer",
+    "comprado": true
+  }
 ]
