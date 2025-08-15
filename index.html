@@ -1,49 +1,92 @@
-<script>
-const repo = "snyxfps/lista-presentes";
-const filePath = "presentes.json";
-const token = "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";
-
-// 🔍 Ler o JSON
-async function lerPresentes() {
-  const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-    headers: {
-      Authorization: `token ${token}`
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Presentes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
     }
-  });
-  const data = await res.json();
-  const conteudo = atob(data.content);
-  const presentes = JSON.parse(conteudo);
-  console.log(presentes);
-}
-
-// ✅ Atualizar o JSON
-async function marcarComoComprado(index) {
-  const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-    headers: {
-      Authorization: `token ${token}`
+    .presente {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
     }
-  });
-  const data = await res.json();
-  const sha = data.sha;
-  const conteudo = JSON.parse(atob(data.content));
+    button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Presentes</h1>
+  <div id="lista"></div>
 
-  conteudo[index].comprado = true;
+  <script>
+    const repo = "snyxfps/lista-presentes";
+    const filePath = "presentes.json";
+    const token = "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";
 
-  const novoConteudo = btoa(JSON.stringify(conteudo, null, 2));
+    // 🔍 Ler o JSON e exibir na página
+    async function lerPresentes() {
+      const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        headers: {
+          Authorization: `token ${token}`
+        }
+      });
+      const data = await res.json();
+      const conteudo = atob(data.content);
+      const presentes = JSON.parse(conteudo);
 
-  await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `token ${token}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      message: "Atualiza presente",
-      content: novoConteudo,
-      sha: sha
-    })
-  });
+      const lista = document.getElementById("lista");
+      lista.innerHTML = "";
 
-  alert("Presente marcado como comprado!");
-}
-</script>
+      presentes.forEach((presente, index) => {
+        const div = document.createElement("div");
+        div.className = "presente";
+        div.innerHTML = `
+          <strong>${presente.item}</strong> (${presente.categoria})<br>
+          Status: ${presente.comprado ? "✅ Comprado" : "🛒 Disponível"}
+          ${!presente.comprado ? `<button onclick="marcarComoComprado(${index})">Marcar como comprado</button>` : ""}
+        `;
+        lista.appendChild(div);
+      });
+    }
+
+    // ✅ Atualizar o JSON
+    async function marcarComoComprado(index) {
+      const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        headers: {
+          Authorization: `token ${token}`
+        }
+      });
+      const data = await res.json();
+      const sha = data.sha;
+      const conteudo = JSON.parse(atob(data.content));
+
+      conteudo[index].comprado = true;
+
+      const novoConteudo = btoa(JSON.stringify(conteudo, null, 2));
+
+      await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `token ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: "Atualiza presente",
+          content: novoConteudo,
+          sha: sha
+        })
+      });
+
+      alert("Presente marcado como comprado!");
+      lerPresentes(); // Atualiza a lista
+    }
+
+    // Carrega os presentes ao abrir a página
+    lerPresentes();
+  </script>
+</body>
+</html>
