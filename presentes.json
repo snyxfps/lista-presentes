@@ -8,5 +8,20 @@
     "categoria": "Sala",
     "item": "Almofada",
     "comprado": false
+  },
+  {
+    "categoria": "Quarto",
+    "item": "Jogo de cama",
+    "comprado": false
+  },
+  {
+    "categoria": "Banheiro",
+    "item": "Toalha de banho",
+    "comprado": false
+  },
+  {
+    "categoria": "Área de serviço",
+    "item": "Cesto de roupa",
+    "comprado": false
   }
 ]
