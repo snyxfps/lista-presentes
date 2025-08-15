@@ -1,0 +1,49 @@
+<script>
+const repo = "snyxfps/lista-presentes";
+const filePath = "presentes.json";
+const token = "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";
+
+// 🔍 Ler o JSON
+async function lerPresentes() {
+  const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+    headers: {
+      Authorization: `token ${token}`
+    }
+  });
+  const data = await res.json();
+  const conteudo = atob(data.content);
+  const presentes = JSON.parse(conteudo);
+  console.log(presentes);
+}
+
+// ✅ Atualizar o JSON
+async function marcarComoComprado(index) {
+  const res = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+    headers: {
+      Authorization: `token ${token}`
+    }
+  });
+  const data = await res.json();
+  const sha = data.sha;
+  const conteudo = JSON.parse(atob(data.content));
+
+  conteudo[index].comprado = true;
+
+  const novoConteudo = btoa(JSON.stringify(conteudo, null, 2));
+
+  await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: "Atualiza presente",
+      content: novoConteudo,
+      sha: sha
+    })
+  });
+
+  alert("Presente marcado como comprado!");
+}
+</script>
