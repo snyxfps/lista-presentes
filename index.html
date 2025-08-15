@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Presentes</title>
+<style>
+body { font-family: Arial; margin: 20px; background: #f9f9f9; }
+h2 { color: #c00; }
+.categoria { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+label { display: block; margin: 5px 0; cursor: pointer; }
+input[type="checkbox"] { margin-right: 10px; }
+button { background: #c00; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Lista de Presentes - Casa Nova</h1>
+<div id="lista"></div>
+<button onclick="salvarLista()">Salvar alterações</button>
+
+<script>
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx8czKZJulsPtvZjbe6_7Tim5EEOvqcZIeRCdlH9iKj47iKeOrGZ93uzPDNG9c45bI_/exec';
+
+async function carregarLista() {
+  const res = await fetch(WEB_APP_URL);
+  const itens = await res.json();
+  const container = document.getElementById('lista');
+  container.innerHTML = '';
+  let categoriasExibidas = [];
+  itens.forEach((item, i) => {
+    if (!categoriasExibidas.includes(item.categoria)) {
+      const h2 = document.createElement('h2');
+      h2.textContent = item.categoria;
+      container.appendChild(h2);
+      const div = document.createElement('div');
+      div.className = 'categoria';
+      container.appendChild(div);
+      categoriasExibidas.push(item.categoria);
+    }
+    const divCat = container.querySelector('div:last-of-type');
+    const label = document.createElement('label');
+    label.innerHTML = `<input type="checkbox" data-index="${i}" ${item.comprado ? 'checked' : ''}> ${item.nome}`;
+    divCat.appendChild(label);
+  });
+}
+
+async function salvarLista() {
+  const checks = document.querySelectorAll('input[type=checkbox]');
+  const itens = Array.from(checks).map((chk, i) => ({
+    comprado: chk.checked
+  }));
+  await fetch(WEB_APP_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(itens)
+  });
+  alert('Lista salva com sucesso!');
+}
+
+carregarLista();
+</script>
+
+</body>
+</html>
