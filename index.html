@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Lista de Presentes</title>
@@ -10,48 +10,86 @@
       background-color: #f9f9f9;
     }
     h1 {
+      text-align: center;
       color: #333;
     }
+    .categoria {
+      margin-top: 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #555;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
     .presente {
-      background: #fff;
-      border: 1px solid #ccc;
+      background-color: #fff;
+      border: 1px solid #ddd;
       padding: 10px;
-      margin-bottom: 10px;
+      margin: 10px 0;
       border-radius: 5px;
+    }
+    button {
+      margin-top: 5px;
+      padding: 6px 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
-  <h1>Lista de Presentes</h1>
-  <div id="lista">Carregando presentes...</div>
+  <h1>🎁 Lista de Presentes</h1>
+  <div id="lista"></div>
 
   <script>
     async function lerPresentes() {
+      const url = "https://raw.githubusercontent.com/seu-usuario/seu-repo/main/presentes.json"; // substitua com sua URL real
       try {
-        const res = await fetch("https://raw.githubusercontent.com/snyxfps/lista-presentes/main/presentes.json");
-        if (!res.ok) throw new Error("Erro ao buscar JSON");
-
-        const presentes = await res.json();
-
+        const resposta = await fetch(url);
+        const presentes = await resposta.json();
         const lista = document.getElementById("lista");
         lista.innerHTML = "";
 
-        presentes.forEach((presente) => {
-          const div = document.createElement("div");
-          div.className = "presente";
-          div.innerHTML = `
-            <strong>${presente.item}</strong> (${presente.categoria})<br>
-            Status: ${presente.comprado ? "✅ Comprado" : "🛒 Disponível"}
-          `;
-          lista.appendChild(div);
+        // Agrupar por categoria
+        const categorias = {};
+        presentes.forEach(p => {
+          if (!categorias[p.categoria]) categorias[p.categoria] = [];
+          categorias[p.categoria].push(p);
         });
-      } catch (error) {
-        document.getElementById("lista").innerText = "Erro ao carregar presentes.";
-        console.error(error);
+
+        // Renderizar por categoria
+        Object.keys(categorias).forEach(categoria => {
+          const titulo = document.createElement("div");
+          titulo.className = "categoria";
+          titulo.textContent = categoria;
+          lista.appendChild(titulo);
+
+          categorias[categoria].forEach((presente, index) => {
+            const div = document.createElement("div");
+            div.className = "presente";
+            div.innerHTML = `
+              <strong>${presente.item}</strong><br>
+              Status: ${presente.comprado ? "✅ Comprado" : "🛒 Disponível"}<br>
+              ${!presente.comprado ? `<button onclick="reservar('${presente.item}')">Reservar</button>` : ""}
+            `;
+            lista.appendChild(div);
+          });
+        });
+      } catch (erro) {
+        console.error("Erro ao carregar presentes:", erro);
+        document.getElementById("lista").innerText = "Erro ao carregar a lista.";
       }
     }
 
-    // Carrega os presentes ao abrir a página
+    function reservar(item) {
+      alert(`Você reservou: ${item}. Esta ação ainda não salva no servidor.`);
+    }
+
     lerPresentes();
   </script>
 </body>
