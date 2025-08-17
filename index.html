@@ -335,27 +335,7 @@
 
   </div>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-  import { getDatabase } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+<script type="module" src="script.js"></script>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyCQQrdrcFtMqljDnmcc0qGpIVdxA63Dq-4",
-    authDomain: "lista-presentes-d96fd.firebaseapp.com",
-    projectId: "lista-presentes-d96fd",
-    storageBucket: "lista-presentes-d96fd.appspot.com",
-    messagingSenderId: "883184779255",
-    appId: "1:883184779255:web:04dde7967849ad125638f2",
-    databaseURL: "https://lista-presentes-d96fd-default-rtdb.firebaseio.com"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-
-  window.firebaseDatabase = database;
-</script>
-
-  <script type="module" src="script.js"></script>
 </body>
 </html>
-
