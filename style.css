@@ -38,6 +38,7 @@ h1 {
 
 .item.reservado {
   background-color: #ffe5e5;
+  border: 1px solid #ff9999;
 }
 
 .info {
