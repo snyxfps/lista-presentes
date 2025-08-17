@@ -1,7 +1,20 @@
-import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCQQrdrcFtMqljDnmcc0qGpIVdxA63Dq-4",
+  authDomain: "lista-presentes-d96fd.firebaseapp.com",
+  projectId: "lista-presentes-d96fd",
+  storageBucket: "lista-presentes-d96fd.appspot.com",
+  messagingSenderId: "883184779255",
+  appId: "1:883184779255:web:04dde7967849ad125638f2",
+  databaseURL: "https://lista-presentes-d96fd-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const db = window.firebaseDatabase;
   const buttons = document.querySelectorAll(".reservar-btn");
 
   onValue(ref(db, 'reservas'), (snapshot) => {
