@@ -17,6 +17,7 @@ const db = getDatabase(app);
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".reservar-btn");
 
+  // Atualiza em tempo real
   onValue(ref(db, 'reservas'), (snapshot) => {
     const reservas = snapshot.val() || {};
 
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Clique no botão de reserva
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const item = button.closest(".item");
@@ -47,7 +49,42 @@ document.addEventListener("DOMContentLoaded", () => {
       const itemRef = ref(db, 'reservas/' + id);
       set(itemRef, {
         reservado: reservado
+      }).then(() => {
+        alert(reservado ? "✅ Item reservado com sucesso!" : "❌ Reserva cancelada!");
       });
     });
   });
+
+  // Filtro de itens
+  document.getElementById("filtro-todos").addEventListener("click", () => {
+    document.querySelectorAll(".item").forEach(item => item.style.display = "flex");
+  });
+
+  document.getElementById("filtro-disponiveis").addEventListener("click", () => {
+    document.querySelectorAll(".item").forEach(item => {
+      const status = item.querySelector(".status span").textContent;
+      item.style.display = (status === "Disponível") ? "flex" : "none";
+    });
+  });
+
+  // Contador regressivo
+  const evento = new Date("2025-09-20T13:00:00");
+  const contador = document.getElementById("contador");
+
+  setInterval(() => {
+    const agora = new Date();
+    const diff = evento - agora;
+
+    if (diff <= 0) {
+      contador.textContent = "🎉 O chá de casa nova já começou!";
+      return;
+    }
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diff / (1000 * 60)) % 60);
+    const segundos = Math.floor((diff / 1000) % 60);
+
+    contador.textContent = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s 🎉`;
+  }, 1000);
 });
