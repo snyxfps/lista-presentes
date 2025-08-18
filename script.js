@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
+// ===== Configuração Firebase =====
 const firebaseConfig = {
   apiKey: "AIzaSyCQQrdrcFtMqljDnmcc0qGpIVdxA63Dq-4",
   authDomain: "lista-presentes-d96fd.firebaseapp.com",
@@ -11,13 +12,14 @@ const firebaseConfig = {
   databaseURL: "https://lista-presentes-d96fd-default-rtdb.firebaseio.com"
 };
 
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".reservar-btn");
 
-  // Atualiza em tempo real
+  // 🔄 Atualiza em tempo real
   onValue(ref(db, 'reservas'), (snapshot) => {
     const reservas = snapshot.val() || {};
 
@@ -28,34 +30,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (reservas[id] && reservas[id].reservado) {
         statusSpan.textContent = "Reservado";
+        statusSpan.classList.add("reservado");
         item.classList.add("reservado");
         button.textContent = "Desmarcar";
       } else {
         statusSpan.textContent = "Disponível";
+        statusSpan.classList.remove("reservado");
         item.classList.remove("reservado");
         button.textContent = "Reservar";
       }
     });
   });
 
-  // Clique no botão de reserva
+  // 🎁 Clique no botão de reserva
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const item = button.closest(".item");
       const id = item.getAttribute("id");
       const statusSpan = item.querySelector(".status span");
-      const reservado = statusSpan.textContent.trim() !== "Reservado";
 
+      const reservado = statusSpan.textContent.trim() !== "Reservado";
       const itemRef = ref(db, 'reservas/' + id);
-      set(itemRef, {
-        reservado: reservado
-      }).then(() => {
-        alert(reservado ? "✅ Item reservado com sucesso!" : "❌ Reserva cancelada!");
+
+      set(itemRef, { reservado: reservado }).then(() => {
+        if (reservado) {
+          alert("✅ Item reservado com sucesso!");
+        } else {
+          alert("❌ Reserva cancelada!");
+        }
       });
     });
   });
 
-  // Filtro de itens
+  // 🔍 Filtro de itens
   document.getElementById("filtro-todos").addEventListener("click", () => {
     document.querySelectorAll(".item").forEach(item => item.style.display = "flex");
   });
@@ -67,11 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Contador regressivo
+  // ⏳ Contador regressivo
   const evento = new Date("2025-09-20T13:00:00");
   const contador = document.getElementById("contador");
 
-  setInterval(() => {
+  function atualizarContador() {
     const agora = new Date();
     const diff = evento - agora;
 
@@ -85,6 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutos = Math.floor((diff / (1000 * 60)) % 60);
     const segundos = Math.floor((diff / 1000) % 60);
 
-    contador.textContent = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s 🎉`;
-  }, 1000);
+    contador.textContent = `⏳ Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s 🎉`;
+  }
+
+  setInterval(atualizarContador, 1000);
+  atualizarContador();
 });
