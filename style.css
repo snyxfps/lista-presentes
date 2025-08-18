@@ -1,142 +1,160 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa;
+/* ===== Reset básico ===== */
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* ===== Cabeçalho ===== */
 header {
   text-align: center;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, #ff6b6b, #ffcc70);
+  padding: 20px;
+  background: #b22222;
   color: white;
+  border-radius: 12px;
+  margin: 15px auto;
+  max-width: 900px;
 }
 
-h1 {
-  margin: 0;
-  font-size: 26px;
+header h1 {
+  font-size: 1.8rem;
 }
 
 .subtitulo {
-  margin: 5px 0 15px;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 1rem;
+  margin: 5px 0;
 }
 
 #contador {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: bold;
+  margin-top: 10px;
 }
 
+/* ===== Botões de filtro ===== */
 .acoes {
-  text-align: center;
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 10px;
 }
 
 .acoes button {
-  background-color: #ff6b6b;
-  color: white;
+  padding: 8px 14px;
   border: none;
-  padding: 10px 18px;
-  margin: 5px;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #b22222;
+  color: white;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
 .acoes button:hover {
-  background-color: #e05656;
+  background: #8b1a1a;
 }
 
+/* ===== Lista ===== */
 .lista {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0 auto 50px auto;
+}
+
+.categoria {
+  margin: 25px 0;
 }
 
 .categoria h2 {
-  margin: 30px 0 15px;
-  font-size: 22px;
-  color: #444;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #b22222;
+  font-size: 1.3rem;
 }
 
+/* ===== Itens ===== */
 .item {
-  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
 }
 
 .item:hover {
-  transform: scale(1.02);
-}
-
-.item.reservado {
-  background-color: #ffeaea;
-  border: 1px solid #ff9999;
-}
-
-.thumb {
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
-}
-
-.info {
-  flex-grow: 1;
+  transform: scale(1.01);
 }
 
 .info h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.status {
-  margin: 4px 0;
-  font-size: 14px;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
 .status span {
   font-weight: bold;
+  color: green;
+}
+
+.status span.reservado {
+  color: red;
 }
 
 .link a {
-  font-size: 13px;
-  color: #ff6b6b;
   text-decoration: none;
+  color: #b22222;
 }
 
 .link a:hover {
   text-decoration: underline;
 }
 
+/* ===== Botões reservar ===== */
 .reservar-btn {
-  background-color: #ff6b6b;
-  color: white;
+  padding: 8px 12px;
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #b22222;
+  color: white;
+  font-size: 0.9rem;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
 .reservar-btn:hover {
-  background-color: #e05656;
+  background: #8b1a1a;
 }
 
+/* ===== Footer ===== */
 footer {
   text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  background: #fafafa;
-  font-size: 14px;
-  color: #666;
+  padding: 15px;
+  font-size: 0.9rem;
+  background: #eee;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
