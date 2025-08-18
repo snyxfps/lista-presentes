@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; /* Fonte mais moderna */
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: #f5f5f5; /* tom mais suave que o branco puro */
+  background: #f5f5f5;
   color: #333;
   line-height: 1.6;
   padding: 0 15px;
@@ -17,7 +17,7 @@ body {
 header {
   text-align: center;
   padding: 30px 20px;
-  background: linear-gradient(135deg, #b22222, #8b1a1a); /* gradiente elegante */
+  background: linear-gradient(135deg, #b22222, #8b1a1a);
   color: white;
   border-radius: 15px;
   margin: 20px auto;
@@ -44,6 +44,7 @@ header h1 {
   display: inline-block;
   padding: 5px 15px;
   border-radius: 12px;
+  animation: pulse 1.2s infinite;
 }
 
 /* ===== Botões de filtro ===== */
@@ -59,7 +60,7 @@ header h1 {
   padding: 10px 18px;
   border: none;
   border-radius: 10px;
-  background: #b22222;
+  background: linear-gradient(135deg, #b22222, #ff4c4c);
   color: white;
   font-size: 0.95rem;
   font-weight: 500;
@@ -69,19 +70,23 @@ header h1 {
 }
 
 .acoes button:hover {
-  background: #8b1a1a;
+  background: linear-gradient(135deg, #8b1a1a, #c41c1c);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
 /* ===== Lista ===== */
 .lista {
   max-width: 900px;
   margin: 0 auto 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .categoria {
   margin: 30px 0;
+  grid-column: 1 / -1;
 }
 
 .categoria h2 {
@@ -96,14 +101,17 @@ header h1 {
 /* ===== Itens ===== */
 .item {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background: white;
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s forwards;
 }
 
 .item:hover {
@@ -130,11 +138,24 @@ header h1 {
   text-decoration: none;
   color: #b22222;
   transition: color 0.3s;
+  position: relative;
+}
+
+.link a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #b22222;
+  transition: width 0.3s;
+}
+
+.link a:hover::after {
+  width: 100%;
 }
 
 .link a:hover {
   color: #8b1a1a;
-  text-decoration: underline;
 }
 
 /* ===== Botões reservar ===== */
@@ -142,19 +163,20 @@ header h1 {
   padding: 10px 16px;
   border: none;
   border-radius: 12px;
-  background: #b22222;
+  background: linear-gradient(135deg, #b22222, #ff4c4c);
   color: white;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-top: 10px;
 }
 
 .reservar-btn:hover {
-  background: #8b1a1a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #8b1a1a, #c41c1c);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* ===== Footer ===== */
@@ -175,16 +197,28 @@ footer p:last-child {
   margin-top: 10px;
 }
 
+/* ===== Animações ===== */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 /* ===== Responsividade ===== */
 @media (max-width: 600px) {
-  .item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  .lista {
+    grid-template-columns: 1fr;
   }
 
   .acoes {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .item {
+    align-items: flex-start;
   }
 }
