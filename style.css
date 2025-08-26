@@ -1,4 +1,3 @@
-/* site-modern.css - versão limpa e moderna (CSS puro) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root{
@@ -6,7 +5,7 @@
   --muted: #f6f7f9;
   --text: #22262a;
   --muted-text: #6b7280;
-  --accent: #2563eb; /* azul moderno */
+  --accent: #2563eb;
   --radius: 10px;
   --card-radius: 12px;
   --container: 1100px;
@@ -25,7 +24,6 @@ body{
   font-size:16px;
 }
 
-/* container */
 .container{
   width:100%;
   max-width:var(--container);
@@ -33,7 +31,6 @@ body{
   padding:24px;
 }
 
-/* header */
 .header{
   background:var(--bg);
   border-radius:var(--card-radius);
@@ -64,7 +61,6 @@ body{
   font-size:18px;
 }
 
-/* card */
 .card{
   background:var(--bg);
   border-radius:var(--card-radius);
@@ -73,7 +69,6 @@ body{
   margin-bottom:16px;
 }
 
-/* grid de presentes */
 .gift-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -93,7 +88,6 @@ body{
 .gift-item h3{margin:0; font-size:16px; font-weight:600;}
 .gift-item p{margin:0; color:var(--muted-text); font-size:14px;}
 
-/* buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -117,7 +111,6 @@ body{
   box-shadow:none;
 }
 
-/* forms */
 .form-row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
 .input, input[type="text"], input[type="email"], textarea, select{
   padding:10px 12px;
@@ -129,10 +122,8 @@ body{
 }
 textarea{min-height:120px; resize:vertical;}
 
-/* footer */
 .footer{color:var(--muted-text); font-size:14px; text-align:center; padding:18px 0;}
 
-/* responsive */
 @media (max-width: 900px){
   .gift-grid{grid-template-columns:repeat(2,1fr)}
   .container{padding:16px}
