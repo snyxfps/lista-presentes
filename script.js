@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const diff = evento - agora;
 
     if (diff <= 0) {
-      contador.textContent = "🎉 O chá de casa nova já começou!";
+      contador.textContent = "O chá de casa nova já começou!";
       return;
     }
 
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutos = Math.floor((diff / (1000 * 60)) % 60);
     const segundos = Math.floor((diff / 1000) % 60);
 
-    contador.textContent = `⏳ Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s 🎉`;
+    contador.textContent = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s`;
   }
 
   setInterval(atualizarContador, 1000);
