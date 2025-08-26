@@ -190,7 +190,8 @@ footer {
 footer p:last-child {
   font-size: 0.9rem;
   color: #777;
-  margin-top: 12px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @keyframes fadeUp {
