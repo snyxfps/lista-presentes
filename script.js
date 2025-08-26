@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
-// ===== Configuração Firebase =====
 const firebaseConfig = {
   apiKey: "AIzaSyCQQrdrcFtMqljDnmcc0qGpIVdxA63Dq-4",
   authDomain: "lista-presentes-d96fd.firebaseapp.com",
@@ -12,14 +11,12 @@ const firebaseConfig = {
   databaseURL: "https://lista-presentes-d96fd-default-rtdb.firebaseio.com"
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".reservar-btn");
 
-  // 🔄 Atualiza em tempo real
   onValue(ref(db, 'reservas'), (snapshot) => {
     const reservas = snapshot.val() || {};
 
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🎁 Clique no botão de reserva
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const item = button.closest(".item");
@@ -62,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🔍 Filtro de itens
   document.getElementById("filtro-todos").addEventListener("click", () => {
     document.querySelectorAll(".item").forEach(item => item.style.display = "flex");
   });
@@ -74,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ⏳ Contador regressivo
   const evento = new Date("2025-09-20T13:00:00");
   const contador = document.getElementById("contador");
 
