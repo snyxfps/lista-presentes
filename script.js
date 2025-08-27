@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const evento = new Date("2025-09-20T13:00:00");
+  const evento = new Date("2025-09-14T12:00:00");
   const contador = document.getElementById("contador");
 
   function atualizarContador() {
@@ -92,3 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(atualizarContador, 1000);
   atualizarContador();
 });
+
