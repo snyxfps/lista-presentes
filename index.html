@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chá de Casa Nova - Bruna & Silas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body>
+
+  <header>
+    <h1>Chá de Casa Nova - Bruna & Silas</h1>
+    <p class="subtitulo">Dia 20/09 às 13h — Av. Cavalhada, 3559</p>
+    <div id="contador"></div>
+    <nav>
+      <a href="index.html">Lista de Presentes</a> |
+      <a href="presenca.html">Lista de Presença</a>
+    </nav>
+  </header>
+
+  <div class="acoes">
+    <button id="filtro-todos">Mostrar Todos</button>
+    <button id="filtro-disponiveis">Mostrar Disponíveis</button>
+  </div>
+
+  <div class="lista">
+
+    <div class="categoria">
+      <h2>Cozinha</h2>
+
+      <div class="item" id="item1">
+        <div class="info">
+          <h3>Saleiro e Açucareiro</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/t5Em7xr" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item2">
+        <div class="info">
+          <h3>Conjunto de potes herméticos (Guardar Mantimentos)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://produto.mercadolivre.com.br/MLB-4017812921-kit-10-organizadores-pote-hermetico-empilhavel-em-acrilico-_JM?matt_tool=31493002&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354070&matt_ad_group_id=173090533436&matt_match_type=&matt_network=g&matt_device=m&matt_creative=727882727481&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=5053483156&matt_product_id=MLB4017812921&matt_product_partition_id=2388009210426&matt_target_id=pla-2388009210426&cq_src=google_ads&cq_cmp=22090354070&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22090354070" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item3">
+        <div class="info">
+          <h3>Ralador inox</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/ralador-de-4-faces-aco-inox-cabo-plastico-para-legumes-arroz-cozinha-restaurantes-buffet-sq-so-qualidade/p/ek3b8b4a94/ud/cplf/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item4">
+        <div class="info">
+          <h3>Escorredor de louça Preto</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/escorredor-de-loucas-rose-e-preto-com-bico-de-escorrer-agua-future/p/jjdh043g69/ud/espt/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item5">
+        <div class="info">
+          <h3>Triturador Manual</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/mini-processador-triturador-de-alimentos-manual-500ml-relet/p/fe0h904gkg/ud/prcm/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item6">
+        <div class="info">
+          <h3>Descanso de panela</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://produto.mercadolivre.com.br/MLB-3242598163-kit-4-descanso-de-panela-silicone-protetor-antiaderente-_JM?matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=m&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=727901775&matt_product_id=MLB3242598163&matt_product_partition_id=2424443219726&matt_target_id=pla-2424443219726&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22603531562" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item7">
+        <div class="info">
+          <h3>Afiador de facas</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.extra.com.br/afiador-de-facas-lyor-em-aco-inox-preto/p/55067177?utm_campaign=vigiadepreco_parceiro&utm_medium=afiliado&utm_source=zanox&idLojista=15&tipoLojista=1P&aw_affid=982195&awc=17874_1755447948_86237f483114048290674469d13992de" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item8">
+        <div class="info">
+          <h3>Jogo americano</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://produto.mercadolivre.com.br/MLB-5268533432-jogo-americano-redondo-6-pecas-sousplat-mesa-posta-cozinha-_JM?matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=m&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=5418681908&matt_product_id=MLB5268533432&matt_product_partition_id=2424443219726&matt_target_id=pla-2424443219726&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22603531562" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item9">
+        <div class="info">
+          <h3>Canecas</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://produto.mercadolivre.com.br/MLB-3670467318-jogo-com-6-canecas-de-260ml-em-porcelana-ryo-maresia-oxford-_JM?matt_tool=13891073&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090193717&matt_ad_group_id=174661962404&matt_match_type=&matt_network=g&matt_device=m&matt_creative=727914179497&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=114092322&matt_product_id=MLB3670467318&matt_product_partition_id=2388010494706&matt_target_id=pla-2388010494706&cq_src=google_ads&cq_cmp=22090193717&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22090193717" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item10">
+        <div class="info">
+          <h3>Medidores</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/kit-medidores-cozinha-copo-500ml-colher-xicaras-isamar/p/jead58h9j5/ud/cjtu/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item11">
+        <div class="info">
+          <h3>Escorredor de massa</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/YMNxhrZ" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item12">
+        <div class="info">
+          <h3>Abridor de lata e garrafa</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.mercadolivre.com.br/abridor-de-lata-e-garrafa-inox-sq-3024-sq-qualidade/p/MLB27056166?pdp_filters=item_id%3AMLB3498304265&from=gshop&matt_tool=92309335&matt_word=&matt_source=bing&matt_campaign=MLB_ML_BING_AO_HOME%20%26%20INDUSTRY-ALL-ALL_X_PLA_ALLB_TXS_ALL&matt_campaign_id=382858298&matt_ad_group=HOME%20%26%20INDUSTRY&matt_match_type=e&matt_network=o&matt_device=c&matt_keyword=default&utm_source=bing&utm_medium=cpc&utm_campaign=MLB_ML_BING_AO_HOME%20%26%20INDUSTRY-ALL-ALL_X_PLA_ALLB_TXS_ALL&utm_term=4581252654962820&utm_content=HOME%20%26%20INDUSTRY" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item13">
+        <div class="info">
+          <h3>Porta tempero</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/porta-tempero-condimentos-9-potes-de-vidro-giratorio-redondo-cor-preto-home-land/p/hd0dkj1b1k/ud/port/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2>Mesa e Servir</h2>
+
+      <div class="item" id="item14">
+        <div class="info">
+          <h3>Jogo de pratos rasos</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.mercadolivre.com.br/jogo-de-6-pratos-rasos-275cm-oxford-ryo-maresia-cor-branco-e-marrom/p/MLB23544122#polycard_client=recommendations_vip-v2p&reco_backend=ranker_retrieval_online_vpp_v2p&reco_model=coldstart_low_exposition%2C+coldstart_high_exposition%2C+rk_online_v4_retsys_vpp_v2p&reco_client=vip-v2p&reco_item_pos=0&reco_backend_type=low_level&reco_id=95899272-368d-487b-a5cc-563379e12dd0&wid=MLB3611193395&sid=recos" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item15">
+        <div class="info">
+          <h3>Copo de Shot</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/kit-12un-copo-shot-tequila-dose-cachaca-licor-aperitivo-clink/p/ch7g886h2g/ud/cosh/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item16">
+        <div class="info">
+          <h3>Jogo de talheres (completo)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/jogo-de-talheres-colher-faca-garfo-24-pecas-inox-tramontina/p/jd7kd0b3kd/ud/faqu/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h2>Sala</h2>
+
+      <div class="item" id="item17">
+        <div class="info">
+          <h3>Almofadas decorativas</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.leroymerlin.com.br/almofada-quadrada-solid-cinza-40x40x40cm_92308300?utm_source=bing&utm_medium=cpc&utm_campaign=PERF_ECOM_BS_SMART_CATG_Geral&utm_term=4583795296583314&utm_content=Aniversario_Leroy_2025" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item18">
+        <div class="info">
+          <h3>Manta para sofá</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://produto.mercadolivre.com.br/MLB-3856668644-manta-para-sofa-grossa-king-size-grande-gigante-300m-x-18m-_JM?matt_tool=92309335&matt_word=&matt_source=bing&matt_campaign=MLB_ML_BING_AO_HOME%20%26%20INDUSTRY-ALL-ALL_X_PLA_ALLB_TXS_ALL&matt_campaign_id=382858298&matt_ad_group=HOME%20%26%20INDUSTRY&matt_match_type=e&matt_network=o&matt_device=c&matt_keyword=default&utm_source=bing&utm_medium=cpc&utm_campaign=MLB_ML_BING_AO_HOME%20%26%20INDUSTRY-ALL-ALL_X_PLA_ALLB_TXS_ALL&utm_term=4581252658057058&utm_content=HOME%20%26%20INDUSTRY" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item19">
+        <div class="info">
+          <h3>Espelho de corpo inteiro</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://mercadolivre.com/sec/2rGrFv7" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h2>Quarto</h2>
+
+      <div class="item" id="item20">
+        <div class="info">
+          <h3>Edredom</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/kit-edredom-casal-queen-dupla-face-3-pecas-preto-e-cinza-theovitex-enxovais/p/chhha628aj/cm/cedt/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item21">
+        <div class="info">
+          <h3>Jogo de lençol (casal)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/jogo-de-lencol-casal-queen-antialergico-3-pecas-estampado-estampas-sortidas-bordados-sampaio/p/gaj2f58079/cm/cjct/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item22">
+        <div class="info">
+          <h3>Organizador de gavetas</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/kit-6-colmeia-organizador-de-gaveta-para-roupa-bebe-calcinha-cueca-e-meias-amilplast/p/kb30f9ea0j/ud/orgm/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item23">
+        <div class="info">
+          <h3>Cabides</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/cabide-de-madeira-atacado-kit-15-unidades-barato-para-loja-de-roupas-adulto-clink/p/ca2g2gh929/ud/caro/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h2>Banheiro</h2>
+
+      <div class="item" id="item24">
+        <div class="info">
+          <h3>Tapete de Banheiro</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.mercadolivre.com.br/kit-2-tapetes-de-banheiro-super-soft-60x40-antiderrapante-cor-cinza-liso/p/MLB26826738?pdp_filters=item_id%3AMLB5541704804&from=gshop&matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=m&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735098660&matt_product_id=MLB26826738-product&matt_product_partition_id=2424443219726&matt_target_id=pla-2424443219726&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22603531562" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item25">
+        <div class="info">
+          <h3>Kit Banheiro preto e madeira (dispenser, porta-escova e lixeira pequena)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/H9aXRUX" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    <div class="categoria">
+      <h2>Lavanderia</h2>
+
+      <div class="item" id="item26">
+        <div class="info">
+          <h3>Pano de chão</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.netshoes.com.br/p/camisa-gremio-iii-2425-sn-jogador-umbro-masculina-preto+branco-2IB-1313-026?campaign=gglepqpla&selected=2IB-1313-026-04&utm_source=bing&utm_medium=cpc&utm_campaign=SEMYHO_PLAD_1P_FUT_Futebol_PMAX%20-%20%3A%3AN3T%3ANB-BI-TE-00-00-TD%3AN3T%3A%3A&utm_term=2330002578629508&utm_content=1P%20Futebol%20PMAX%20-%20FeedOnly" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item27">
+        <div class="info">
+          <h3>Cesto de roupa suja</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/pUwP2SN" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item28">
+        <div class="info">
+          <h3>Aspirador de pó</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/aspirador-de-po-portatil-e-vertical-electrolux-1100w-stk12-preto/p/021499100/ep/apdv/?partner_id=64068&utm_source=pdp&utm_medium=share" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item29">
+        <div class="info">
+          <h3>Mop Spray</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.magazineluiza.com.br/mop-spray-giratorio-limpeza-flash-magico-rodo-esfregao-flat-rayco/p/cj17db026b/ud/mopi/" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item30">
+        <div class="info">
+          <h3>Varal mágico</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.mercadolivre.com.br/varal-magico-7-varetas-120cm-aluminio-dobravel-branco/p/MLB23770527?pdp_filters=item_id%3AMLB3638541747&from=gshop&matt_tool=37064035&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354481&matt_ad_group_id=173090606396&matt_match_type=&matt_network=g&matt_device=m&matt_creative=727882732977&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735098639&matt_product_id=MLB23770527-product&matt_product_partition_id=2389601385306&matt_target_id=pla-2389601385306&cq_src=google_ads&cq_cmp=22090354481&cq_net=g&cq_plt=gp&cq_med=pla&gad_campaignid=22090354481" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item31">
+        <div class="info">
+          <h3>Cesto organizador multiuso</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/vpZGVKQ" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item32">
+        <div class="info">
+          <h3>Balde retrátil</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://br.shp.ee/M3XsRe5" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item33">
+        <div class="info">
+          <h3>Kit Vassoura</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+          <p class="link"><a href="https://www.amazon.com.br/Limpeza-Completo-Vassoura-Sint%C3%A9tica-Multiuso/dp/B0FHWT2Q2B?dib=eyJ2IjoiMSJ9.JW4yAG3f5Btc7mD8qTH1BcqHhi-_Qq7kOSHzebkvfKa_jSg9hsF-6i4-c5ygkm6pryHgOj_M2IJmd7aXxMuKUnpXp-NVb1C13oUgAR8uBsL3BiwTHYJLT0DVZF1JxwUNfi_GmMUuFLGaer3z-rFU4j-x-s-yyYji31PCoDfjb-ezD_at7xh1G1Pva1NT3yJDn6qL1hl8ZtwM62CofyISMVv_liEBZd2HbUcJZ-RoZx2SR0RyJQzKy3sP4CnOhatT5J34kFAQdvAia6s--ssfRNJ50ldPuBlN2lqqioiN_do.At0q1Q7lEqVdJnCQ_2Lja1sMj2AtSd-rXnMC5ekj5c8&dib_tag=se&keywords=kit+vassoura+rodo+e+p%C3%A1&qid=1755461117&sr=8-8&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9" target="_blank">Ver referência</a></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+    </div>
+  </div>
+
+<script type="module" src="script.js"></script>
+
+<footer>
+  <p>© 2025 Todos os direitos reservados a Silas</p>
+</footer>
+
+</body>
+</html>
