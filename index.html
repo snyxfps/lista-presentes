@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chá de Casa Nova - Eduarda & Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Chá de Casa Nova<br><span>Eduarda & Laura</span></h1>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Lista de Presentes</a>
+    <a href="presenca.html">Lista de Presença</a>
+  </nav>
+
+  <div class="acoes">
+    <button id="filtro-todos">Mostrar Todos</button>
+    <button id="filtro-disponiveis">Mostrar Disponíveis</button>
+  </div>
+
+
+  <div class="category-chips">
+    <a href="#cat-cozinha">Cozinha</a>
+    <a href="#cat-mesa">Mesa e Servir</a>
+    <a href="#cat-sala">Sala</a>
+    <a href="#cat-quarto">Quarto</a>
+    <a href="#cat-banheiro">Banheiro</a>
+    <a href="#cat-lavanderia">Lavanderia</a>
+    <a href="#cat-pix">Contribuição Pix</a>
+  </div>
+
+  <div class="lista">
+
+    <div class="categoria">
+      <h2 id="cat-cozinha">Cozinha</h2>
+
+      <div class="item" id="item1">
+        <div class="info">
+          <h3>GELADEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item2">
+        <div class="info">
+          <h3>FOGÃO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item3">
+        <div class="info">
+          <h3>MICRONDAS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item4">
+        <div class="info">
+          <h3>FORNO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item5">
+        <div class="info">
+          <h3>AIR FRYER</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item6">
+        <div class="info">
+          <h3>LIQUIDIFICADOR</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item7">
+        <div class="info">
+          <h3>MIXER</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item8">
+        <div class="info">
+          <h3>JOGO DE PANELA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item9">
+        <div class="info">
+          <h3>ASSADEIRA PEQUENA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item10">
+        <div class="info">
+          <h3>ASSADEIRA MÉDIA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item11">
+        <div class="info">
+          <h3>ASSADEIRA GRANDE</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item12">
+        <div class="info">
+          <h3>TIGELAS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item13">
+        <div class="info">
+          <h3>ESCORREDOR DE MASSA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item14">
+        <div class="info">
+          <h3>PENEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item15">
+        <div class="info">
+          <h3>RALADOR</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item16">
+        <div class="info">
+          <h3>DESCASCADOR DE LEGUMES</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item17">
+        <div class="info">
+          <h3>ESCORREDOR DE LOUÇA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item18">
+        <div class="info">
+          <h3>FORMA DE GELO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item19">
+        <div class="info">
+          <h3>TÁBUA DE CORTE</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item20">
+        <div class="info">
+          <h3>JOGO DE FACA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item21">
+        <div class="info">
+          <h3>PORTA TEMPEROS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item22">
+        <div class="info">
+          <h3>CHALEIRA ELETRICA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item23">
+        <div class="info">
+          <h3>CAFETEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item24">
+        <div class="info">
+          <h3>TORRADEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item25">
+        <div class="info">
+          <h3>SANDUICHEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item26">
+        <div class="info">
+          <h3>CONJUNTO DE BOWLS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item27">
+        <div class="info">
+          <h3>PANELA DE PRESSÃO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item28">
+        <div class="info">
+          <h3>COLHER DE PAU</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item29">
+        <div class="info">
+          <h3>CONCHA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item30">
+        <div class="info">
+          <h3>ESPATULA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item31">
+        <div class="info">
+          <h3>PEGADOR</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item32">
+        <div class="info">
+          <h3>FOUET</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item33">
+        <div class="info">
+          <h3>MEDIDORES</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item34">
+        <div class="info">
+          <h3>POTES HERMÉTICOS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item35">
+        <div class="info">
+          <h3>PORTA MANTIMENTOS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item36">
+        <div class="info">
+          <h3>DESCANÇO DE PANELA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item37">
+        <div class="info">
+          <h3>POTES DE VIDRO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item38">
+        <div class="info">
+          <h3>RODO DE PIA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item39">
+        <div class="info">
+          <h3>PANO DE PRATO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item40">
+        <div class="info">
+          <h3>CORTADOR DE PIZZA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item41">
+        <div class="info">
+          <h3>ESCORREDOR DE SALADA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item42">
+        <div class="info">
+          <h3>EXPREMEDOR DE LIMÃO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item43">
+        <div class="info">
+          <h3>TÁBUA DE MADEIRA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item44">
+        <div class="info">
+          <h3>EXPREMEDOR DE FRUTAS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item45">
+        <div class="info">
+          <h3>AÇUCAREIRO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item46">
+        <div class="info">
+          <h3>SALEIRO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-mesa">Mesa e Servir</h2>
+
+      <div class="item" id="item47">
+        <div class="info">
+          <h3>XICARAS</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item48">
+        <div class="info">
+          <h3>PIRES</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item49">
+        <div class="info">
+          <h3>JOGO DE SOBREMESA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item50">
+        <div class="info">
+          <h3>JARRA PARA SUCO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item51">
+        <div class="info">
+          <h3>TAÇA DE VINHO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item52">
+        <div class="info">
+          <h3>GARRAFA TÉRMICA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item53">
+        <div class="info">
+          <h3>JOGO AMERICANO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item54">
+        <div class="info">
+          <h3>TAÇA DE ESPUMANTE</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item55">
+        <div class="info">
+          <h3>CONJUNTO DE SUSHI</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-sala">Sala</h2>
+
+      <div class="item" id="item56">
+        <div class="info">
+          <h3>HUMIDIFICADOR DE AR</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-quarto">Quarto</h2>
+
+      <div class="item" id="item57">
+        <div class="info">
+          <h3>LENÇOL CAMA DE CASAL</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item58">
+        <div class="info">
+          <h3>EDREDO CASAL</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item59">
+        <div class="info">
+          <h3>FRONHA</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item60">
+        <div class="info">
+          <h3>CABIDE</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-banheiro">Banheiro</h2>
+
+      <div class="item" id="item61">
+        <div class="info">
+          <h3>TOALHA DE BANHO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item62">
+        <div class="info">
+          <h3>TOALHA DE ROSTO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-lavanderia">Lavanderia</h2>
+
+      <div class="item" id="item63">
+        <div class="info">
+          <h3>FERRO DE PASSAR ROUPA OU VAPORIZADOR</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item64">
+        <div class="info">
+          <h3>PANO DE CHÃO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item65">
+        <div class="info">
+          <h3>BALDE</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item66">
+        <div class="info">
+          <h3>MOPI</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item67">
+        <div class="info">
+          <h3>ASPIRADOR DE PÓ</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item68">
+        <div class="info">
+          <h3>VARAL DE CHÃO</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+    <div class="categoria">
+      <h2 id="cat-pix">Contribuição Pix</h2>
+
+      <div class="item" id="item69">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 1)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item70">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 2)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item71">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 3)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item72">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 4)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item73">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 5)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item74">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 6)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item75">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 7)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item76">
+        <div class="info">
+          <h3>PIX DE 50 (Cota 8)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item77">
+        <div class="info">
+          <h3>PIX DE 100 (Cota 1)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item78">
+        <div class="info">
+          <h3>PIX DE 100 (Cota 2)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item79">
+        <div class="info">
+          <h3>PIX DE 100 (Cota 3)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item80">
+        <div class="info">
+          <h3>PIX DE 100 (Cota 4)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item81">
+        <div class="info">
+          <h3>PIX DE 100 (Cota 5)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item82">
+        <div class="info">
+          <h3>PIX DE 150 (Cota 1)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item83">
+        <div class="info">
+          <h3>PIX DE 150 (Cota 2)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item84">
+        <div class="info">
+          <h3>PIX DE 150 (Cota 3)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item85">
+        <div class="info">
+          <h3>PIX DE 150 (Cota 4)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item86">
+        <div class="info">
+          <h3>PIX DE 200 OU MAIS (Cota 1)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item87">
+        <div class="info">
+          <h3>PIX DE 200 OU MAIS (Cota 2)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+      <div class="item" id="item88">
+        <div class="info">
+          <h3>PIX DE 200 OU MAIS (Cota 3)</h3>
+          <p class="status">Status: <span>Disponível</span></p>
+        </div>
+        <button class="reservar-btn">Reservar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+
+  <footer>
+    <p>© 2026 Todos os direitos reservados a Eduarda e Laura</p>
+  </footer>
+
+
+  <a href="https://wa.me/5599999999999?text=Oi%20Eduarda%20e%20Laura!%20Sobre%20o%20ch%C3%A1%20de%20casa%20nova..."
+    class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path
+        d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.994 9.994 0 004.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.922-7.066C17.199 3.038 14.693 2 12.012 2zM12.012 19.966h-.002a8.214 8.214 0 01-4.186-1.144l-.3-.178-3.111.815.832-3.031-.195-.311a8.174 8.174 0 01-1.251-4.331c.001-4.524 3.684-8.205 8.215-8.205 2.193 0 4.254.854 5.803 2.405a8.175 8.175 0 012.404 5.806c-.001 4.524-3.683 8.204-8.214 8.205zm4.512-6.16c-.247-.124-1.463-.723-1.692-.806-.228-.083-.395-.124-.561.124-.166.248-.64 8.06-.784.97-.145.166-.29.186-.537.062-.247-.124-1.045-.385-1.99-1.23-.735-.657-1.231-1.47-1.376-1.718-.146-.248-.016-.382.108-.505.111-.11.247-.289.37-.433.124-.145.166-.248.248-.413.083-.165.041-.31-.021-.433-.062-.124-.561-1.353-.769-1.85-.202-.486-.407-.42-.561-.428-.145-.008-.31-.01-.476-.01s-.434.062-.661.31c-.228.248-.868.847-.868 2.066s.889 2.396 1.013 2.561c.124.165 1.748 2.668 4.234 3.741 1.63.702 2.274.605 3.03.5 1.077-.145 2.193-.896 2.502-1.761.31-.865.31-1.606.216-1.761-.091-.156-.34-.249-.588-.372z" />
+    </svg>
+  </a>
+
+  <button id="btn-topo" class="back-to-top" aria-label="Voltar para o topo">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 4l-8 8h6v8h4v-8h6z" />
+    </svg>
+  </button>
+</body>
+
+</html>

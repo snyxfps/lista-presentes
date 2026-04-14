@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de Presença</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Lista de Presença<br><span>Eduarda & Laura</span></h1>
+    <p class="subtitulo">Dia 16/05/2026 às 15:30 — Rua São Manoel 90 - Alvorada</p>
+    </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Lista de Presentes</a>
+    <a href="presenca.html">Lista de Presença</a>
+  </nav>
+
+  <form id="form-presenca">
+    <input type="text" id="nome" placeholder="Digite seu nome" required>
+    <button type="submit">Confirmar Presença</button>
+  </form>
+
+  <ul id="lista-presenca"></ul>
+
+  <script type="module" src="presenca.js"></script>
+
+
+<a href="https://wa.me/5551989773284?text=Oi%20Eduarda%20e%20Laura!%20Sobre%20o%20ch%C3%A1%20de%20casa%20nova..." class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.994 9.994 0 004.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.922-7.066C17.199 3.038 14.693 2 12.012 2zM12.012 19.966h-.002a8.214 8.214 0 01-4.186-1.144l-.3-.178-3.111.815.832-3.031-.195-.311a8.174 8.174 0 01-1.251-4.331c.001-4.524 3.684-8.205 8.215-8.205 2.193 0 4.254.854 5.803 2.405a8.175 8.175 0 012.404 5.806c-.001 4.524-3.683 8.204-8.214 8.205zm4.512-6.16c-.247-.124-1.463-.723-1.692-.806-.228-.083-.395-.124-.561.124-.166.248-.64 8.06-.784.97-.145.166-.29.186-.537.062-.247-.124-1.045-.385-1.99-1.23-.735-.657-1.231-1.47-1.376-1.718-.146-.248-.016-.382.108-.505.111-.11.247-.289.37-.433.124-.145.166-.248.248-.413.083-.165.041-.31-.021-.433-.062-.124-.561-1.353-.769-1.85-.202-.486-.407-.42-.561-.428-.145-.008-.31-.01-.476-.01s-.434.062-.661.31c-.228.248-.868.847-.868 2.066s.889 2.396 1.013 2.561c.124.165 1.748 2.668 4.234 3.741 1.63.702 2.274.605 3.03.5 1.077-.145 2.193-.896 2.502-1.761.31-.865.31-1.606.216-1.761-.091-.156-.34-.249-.588-.372z" />
+  </svg>
+</a>
+
+</body>
+</html>
